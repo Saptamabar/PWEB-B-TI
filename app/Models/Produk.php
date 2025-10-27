@@ -10,15 +10,17 @@ class Produk extends Model
         'Nama',
         'Deskripsi',
         'Stok',
-        'Harga'
+        'Harga',
+        'kategori_id',
+        'user_id'
     ];
 
     public function kategoris() //produk dimiliki banyak kategori
     {
-        return $this->belongsTo('Kategori');
+        return $this->belongsTo(Kategori::class,'kategori_id');
     }
     public function users()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo(User::class,'user_id');
     }
 }
