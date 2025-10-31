@@ -23,8 +23,11 @@ class ProdukController extends Controller
         dd($products);
         return view('productPage',compact('products'));
     }
-    public function tambah()
+    public function tambah(Request $request)
     {
+        $validated = $request->validate([
+
+        ]);
         // DB::insert('INSERT INTO produks (nama,deskripsi,stok,harga,user_id,kategori_id )VALUES ("indomie","seleraku",10,3000,1,1)');
         return redirect()->back();
     }
