@@ -15,8 +15,8 @@ class auth
      */
     public function handle(Request $request, Closure $next,bool $state): Response
     {
-        $authState =  \Auth::check();
-        if($authState === $state){
+        $authState =  Auth::check();
+        if($authState){
             return $next($request);
         }
         return to_route('login');
